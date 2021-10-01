@@ -16,8 +16,11 @@ public class SaqueBusiness {
 			throw new RuntimeException("Conta não encontrada.");
 		if(conta.getSaldo() < valor)
 			throw new RuntimeException("Saldo abaixo do valor solicitado.");
-		if(conta.getSaldo() < 0)
+		if(conta.getSaldo() < 0) {
 			throw new RuntimeException("Operação não permitida.");
+		}else {
+			conta.setSaldo(conta.getSaldo() - valor);
+		}
 		
 		return this.contaDAO.alterar(conta);
 	}

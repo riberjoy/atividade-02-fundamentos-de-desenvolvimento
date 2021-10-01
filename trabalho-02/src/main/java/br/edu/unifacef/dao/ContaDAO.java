@@ -9,7 +9,7 @@ public class ContaDAO {
 	}
 	
 	public Conta alterar(final Conta conta) {
-		conta.setSaldo(500.00);
+		//Salvando na base de dados 
 		return conta;
 	}
 }

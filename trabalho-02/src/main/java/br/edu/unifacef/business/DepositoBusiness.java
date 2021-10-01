@@ -14,6 +14,8 @@ public class DepositoBusiness {
 		if(conta == null ) 
 			throw new RuntimeException("Conta não encontrada.");
 		
+		conta.setSaldo(conta.getSaldo() + valor);
+		
 		return this.contaDAO.alterar(conta);
 	}
 }

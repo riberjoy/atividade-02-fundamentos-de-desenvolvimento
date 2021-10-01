@@ -11,14 +11,16 @@ public class EmprestimoBusiness {
 		this.contaDAO = dao;
 	}
 	
-	public Conta solicitarEmprestimo(Conta conta, Cliente cliente ) {
+	public Conta solicitarEmprestimo(Conta conta, Cliente cliente, Double valor ) {
 		if(conta == null)
 			throw new RuntimeException("Conta requerido.");
 		if(cliente == null)
 			throw new RuntimeException("Cliente requerido.");
-		if(cliente.getScoreSerasa() < 100 )
+		if(cliente.getScoreSerasa() < 100 ) {
 			throw new RuntimeException("Emprestimo indisponível");
-		
+		}else {
+			conta.setSaldo(conta.getSaldo() + valor);
+		}
 		return this.contaDAO.alterar(conta);
 	}
 }
