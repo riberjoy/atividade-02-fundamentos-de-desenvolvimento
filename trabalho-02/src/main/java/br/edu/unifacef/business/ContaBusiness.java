@@ -12,7 +12,7 @@ public class ContaBusiness {
 	
 	public Conta salvar(Conta conta) {
 		if(conta == null )
-			throw new RuntimeException("Nenuma conta encontrada");
+			throw new RuntimeException("Nenhuma conta encontrada");
 		
 		if(conta.getNumeroConta().isEmpty())
 			throw new RuntimeException("Numero da conta encontrada");
@@ -26,7 +26,7 @@ public class ContaBusiness {
 	public Conta alterar(Conta conta) {
 		
 		if(conta == null )
-			throw new RuntimeException("Nenuma conta encontrada");
+			throw new RuntimeException("Nenhuma conta encontrada");
 		
 		if(conta.getNumeroConta().isEmpty())
 			throw new RuntimeException("Numero da conta encontrada");
