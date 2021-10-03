@@ -1,5 +1,5 @@
 #Seleciona a imagem para o build
-FROM maven:3.6.9-jdk-11-slim AS build
+FROM maven:3.6.0-jdk-11-slim AS build
 
 WORKDIR /app
 
@@ -12,6 +12,6 @@ RUN mvn clean package
 
 FROM openjdk:11-jre-slim
 
-COPY --from-build /app/target/*,jar /app.jar
+COPY --from=build /app/target/*.jar /app.jar
 
 CMD ["java",  "-jar", "/app.jar"]
