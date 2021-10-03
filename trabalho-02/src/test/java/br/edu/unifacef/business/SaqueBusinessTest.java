@@ -1,7 +1,5 @@
 package br.edu.unifacef.business;
 
-import static org.junit.Assert.assertEquals;
-
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -26,10 +24,11 @@ public class SaqueBusinessTest {
 		contaMock.setNumeroConta("121");
 		contaMock.setSaldo(120.00);
 		
-		SaqueBusiness saque = new SaqueBusiness(contaDAO);
+		SaqueBusiness saque = new SaqueBusiness(new ContaDAO());
 		Conta novoSaldo = saque.sacar(contaMock, 10.00);
+		System.out.println("Valor em conta apos saque: " + novoSaldo.getSaldo());
 		
-		//assertEquals(110.00, novoSaldo.getSaldo());
+//		assertEquals(110.00, novoSaldo.getSaldo());
 	}
 	
 	@Test

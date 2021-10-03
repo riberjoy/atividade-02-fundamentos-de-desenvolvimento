@@ -25,13 +25,12 @@ public class DepositoBusinessTest {
 		contaMock.setAgencia("0003");
 		contaMock.setNumeroConta("020369854");
 		contaMock.setSaldo(250.00);
-
+		
 		Double valor = 500.00;
-		
-		DepositoBusiness deposito = new DepositoBusiness(contaDAO);
-		deposito.deposito(contaMock, valor);
-		
-		System.out.println(deposito);
+	
+		DepositoBusiness deposito = new DepositoBusiness(new ContaDAO());
+		Conta conta = deposito.deposito(contaMock, valor);
+		System.out.println("Novo valor em conta: " + conta.getSaldo());
 		
 		
 	}
