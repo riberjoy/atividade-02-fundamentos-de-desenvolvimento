@@ -12,4 +12,4 @@ Para fazer o build da imagem do projeto, acesse o diretório raiz do projeto e e
 Após a imagem ter sido criada utilize <b> docker run posfacef/fundamentos </b> para executar a imagem.
 
 
-OBS.: Para realizar o teste, utilize o projeto <b>_aatividade_</b>
+OBS.: Para realizar o teste, utilize o projeto _atividade_
