@@ -1,8 +1,8 @@
-package br.edu.unifacef.business;
+package br.edu.facef.business;
 
-import br.edu.unifacef.dao.ContaDAO;
-import br.edu.unifacef.model.Cliente;
-import br.edu.unifacef.model.Conta;
+import br.edu.facef.dao.ContaDAO;
+import br.edu.facef.model.Cliente;
+import br.edu.facef.model.Conta;
 
 public class EmprestimoBusiness {
 	private ContaDAO contaDAO;

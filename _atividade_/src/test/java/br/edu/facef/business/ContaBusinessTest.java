@@ -1,4 +1,4 @@
-package br.edu.unifacef.business;
+package br.edu.facef.business;
 
 import static org.junit.Assert.assertEquals;
 
@@ -8,9 +8,8 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.runners.MockitoJUnitRunner;
 
-import br.edu.unifacef.business.ContaBusiness;
-import br.edu.unifacef.dao.ContaDAO;
-import br.edu.unifacef.model.Conta;
+import br.edu.facef.dao.ContaDAO;
+import br.edu.facef.model.Conta;
 
 @RunWith(MockitoJUnitRunner.class)
 public class ContaBusinessTest {
