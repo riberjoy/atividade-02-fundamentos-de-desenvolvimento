@@ -12,6 +12,6 @@ Para fazer o build da imagem do projeto, acesse o diretório raiz do projeto e e
 ![alt text](https://github.com/riberjoy/atividade-02-fundamentos-de-desenvolvimento/blob/main/ciracao-container-docker.PNG)
 
 Após a imagem ter sido criada utilize <b> docker run posfacef/fundamentos </b> para executar a imagem.
-![alt text](https://raw.githubusercontent.com/username/projectname/branch/path/to/img.png)
+![alt text](https://github.com/riberjoy/atividade-02-fundamentos-de-desenvolvimento/blob/main/saida-docker.PNG)
 
 OBS.: Para realizar o teste, acesse o diretório __atividade__
