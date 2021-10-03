@@ -2,6 +2,7 @@ package br.edu.unifacef.business;
 
 import static org.junit.Assert.assertEquals;
 
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
@@ -58,7 +59,8 @@ public class SaqueBusinessTest {
 		SaqueBusiness saque = new SaqueBusiness(null);
 		Conta novoSaldo = saque.sacar(contaMock, 10.00);
 		
-		//assertEquals(110.00, novoSaldo.getSaldo());
+		Assert.assertNull(novoSaldo.getNumeroConta());
+		
 	}
 
 }

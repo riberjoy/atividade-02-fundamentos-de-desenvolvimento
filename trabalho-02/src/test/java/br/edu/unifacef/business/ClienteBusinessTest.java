@@ -57,7 +57,7 @@ public class ClienteBusinessTest {
 		assertEquals(new Long(123), clienteSalvo.getId());
 	}
 	
-	@Test
+	@Test(expected = RuntimeException.class)
 	public void naoDeveSalvarClienteComNomeVazio() {
 		
 		Conta contaMock = new Conta();
@@ -81,7 +81,7 @@ public class ClienteBusinessTest {
 		novoCliente.setTelefone("(16)99999-9999");
 		novoCliente.setConta(contaMock);
 		
-		Mockito.when(clienteDAO.salvar(novoCliente)).thenReturn(clienteMock);
+		Mockito.when(clienteDAO.salvar(clienteMock)).thenReturn(novoCliente).thenThrow(RuntimeException.class);
 		
 		ClienteBusiness clienteBusiness = new ClienteBusiness(clienteDAO);
 		
@@ -92,7 +92,7 @@ public class ClienteBusinessTest {
 		assertEquals(null, clienteSalvo.getNome());
 	}
 	
-	@Test
+	@Test(expected = RuntimeException.class)
 	public void naoDeveSalvarClienteSemConta() {
 		
 
@@ -111,7 +111,7 @@ public class ClienteBusinessTest {
 		novoCliente.setTelefone("(16)99999-9999");
 		novoCliente.setConta(null);
 		
-		Mockito.when(clienteDAO.salvar(novoCliente)).thenReturn(clienteMock);
+		Mockito.when(clienteDAO.salvar(novoCliente)).thenReturn(clienteMock).thenThrow(RuntimeException.class);
 		
 		ClienteBusiness clienteBusiness = new ClienteBusiness(clienteDAO);
 		

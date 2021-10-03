@@ -61,7 +61,7 @@ public class ContaBusinessTest {
 		assertEquals("235", contaAtualizada.getAgencia());
 	}
 	
-	@Test
+	@Test(expected = RuntimeException.class)
 	public void deveRetornarErroAoAlterarUmaConta() {
 		Conta contaMock = new Conta();
 		contaMock.setId(1L);
@@ -69,12 +69,12 @@ public class ContaBusinessTest {
 		contaMock.setNumeroConta("121");
 		contaMock.setSaldo(120.00);
 		
-		/*Conta novaConta = new Conta();
-		contaMock.setAgencia(null);
-		contaMock.setNumeroConta("121");
-		contaMock.setSaldo(120.00);*/
+		Conta novaConta = new Conta();
+		novaConta.setAgencia(null);
+		novaConta.setNumeroConta("121");
+		novaConta.setSaldo(120.00);
 		
-		Mockito.when(contaDAO.salvar(contaMock)).thenReturn(null);
+		Mockito.when(contaDAO.salvar(contaMock)).thenThrow(RuntimeException.class);
 		
 		ContaBusiness contaBusiness = new ContaBusiness(contaDAO);
 		

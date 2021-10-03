@@ -3,6 +3,7 @@ package br.edu.unifacef.business;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
 
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
@@ -85,7 +86,7 @@ public class EmprestimoBusinessTest {
 		EmprestimoBusiness emprestimo = new EmprestimoBusiness(contaDAO);
 		Conta novoSaldo = emprestimo.solicitarEmprestimo(null, clienteMock, 500.00);
 		
-		//Verificar Assertiva
 		
+		Assert.assertNull(novoSaldo.getNumeroConta());
 	}
 }
